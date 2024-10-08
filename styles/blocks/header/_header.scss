@@ -1,0 +1,65 @@
+.header {
+  padding-top: fluid-common(30, 60, var(--default-width));
+
+  @include mobile {
+    padding-top: 15px;
+  }
+
+  &__logo {
+    max-width: fluid-common(110, 220, var(--default-width));
+
+    @include mobile {
+      max-width: 144px;
+      margin-right: auto;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: fluid-common(25, 40, var(--default-width));
+  }
+
+  &__menu {
+    margin-left: auto;
+    font-size: fluid-common(16, 20, var(--default-width));
+
+    &-list {
+      display: flex;
+      align-items: center;
+      column-gap: fluid-common(15, 40, var(--default-width));
+    }
+
+    &-link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      height: 48px;
+
+      @include hover {
+        &::after {
+          width: 100%;
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        translate: -50%;
+        width: 0;
+        height: 2px;
+        background-color: currentColor;
+        transition-duration: inherit;
+      }
+    }
+  }
+  &__button {
+    font-size: fluid-common(16, 20, var(--default-width));
+
+    height: fluid-common(44, 70, var(--default-width));
+    padding-inline: fluid-common(20, 35, var(--desktop-large));
+  }
+}

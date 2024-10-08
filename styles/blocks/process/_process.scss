@@ -1,0 +1,105 @@
+.process {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid-common(20, 30);
+    counter-reset: custom-counter;
+    list-style: none;
+  }
+
+  &__item {
+    --counterContent: counter(custom-counter);
+
+    counter-increment: custom-counter;
+
+    &:nth-child(-n + 9) {
+      --counterContent: "0" counter(custom-counter);
+    }
+  }
+
+  .process__accordion[open] .process__accordion-indicator::after {
+    width: 0;
+    height: 0;
+  }
+
+  &__accordion {
+    transition-duration: var(--transition-duration);
+    @include hover {
+      cursor: pointer;
+      background-color: var(--color-accent);
+    }
+
+    padding-inline: fluid-common(30, 60);
+    padding-block: fluid-common(30, 40);
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow);
+
+    background-color: var(--color-gray);
+
+    &[open] {
+      background-color: var(--color-accent);
+    }
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: fluid-common(30, 50, 767);
+      user-select: none;
+    }
+
+    &-title {
+      display: flex;
+      align-items: center;
+      column-gap: 25px;
+
+      &::before {
+        content: var(--counterContent);
+        font-size: 2em;
+
+        @include mobile-s {
+          font-size: 30px;
+        }
+      }
+
+      @include mobile {
+        column-gap: 33px;
+        font-size: fluid-common(18, 30, 767);
+      }
+    }
+
+    &-indicator {
+      @include flex-center;
+      @include square(fluid-common(30, 58, 767));
+
+      flex-shrink: 0;
+      position: relative;
+      background-color: var(--color-gray);
+      border: var(--border);
+      border-radius: 50%;
+
+      &::before,
+      &::after {
+        @include abs-center;
+
+        content: "";
+        width: 45%;
+        height: 10%;
+        background-color: var(--color-dark);
+        transition-duration: var(--transition-duration);
+      }
+
+      &::after {
+        height: 45%;
+        width: 10%;
+      }
+    }
+
+    &-body {
+      margin-top: fluid-common(20, 30, 767);
+      padding-top: fluid-common(20, 30, 767);
+      font-size: fluid-common(14, 18, 767);
+      border-top: var(--border);
+    }
+  }
+}

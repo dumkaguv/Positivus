@@ -1,0 +1,98 @@
+.services {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: fluid-common(20, 40);
+
+    margin-bottom: fluid-common(70, 125);
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.service-card {
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: fluid-common(30, 60);
+
+    padding: fluid-common(25, 60);
+    min-height: 310px;
+
+    border-radius: var(--border-radius-large);
+    border: var(--border);
+    box-shadow: var(--shadow);
+
+    @include tablet {
+      padding: fluid-common(22, 60, 1720);
+    }
+
+    @include mobile {
+      padding: 50px;
+    }
+
+    @include mobile-s {
+      column-gap: 84px;
+      row-gap: 27px;
+    }
+
+    @include mobile-xs {
+      padding: 35px;
+    }
+  }
+
+  &__title {
+    @include mobile-s {
+      grid-column: span 2;
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    order: 2;
+    align-self: end;
+    column-gap: 15px;
+    margin-right: auto;
+
+    @include hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__image {
+    grid-row: span 2;
+    align-self: center;
+    justify-self: center;
+
+    @include tablet {
+      max-width: 120px;
+      max-height: 90px;
+    }
+
+    @include mobile {
+      max-width: fluid-common(130, 210, 660);
+      max-height: 170px;
+    }
+
+    @include mobile-s {
+      max-width: fluid-common(130, 155, 420);
+      grid-row: span 1;
+      order: 2;
+    }
+  }
+
+  &__link-icon-wrapper {
+    @include square(41px);
+    position: relative;
+
+    border-radius: 50%;
+  }
+
+  &__link-icon {
+    @include abs-center;
+  }
+}

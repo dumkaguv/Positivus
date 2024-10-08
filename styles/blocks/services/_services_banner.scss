@@ -1,0 +1,38 @@
+.services {
+  --image-Offset-Y: 25px;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 40px;
+    max-height: 350px;
+
+    @include mobile {
+        align-items: start;
+        align-items: center;
+    }
+  }
+
+  &__banner-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: fluid-common(20, 26);
+    max-width: 500px;
+  }
+
+  &__banner-image {
+    position: relative;
+    bottom: var(--image-Offset-Y);
+    height: fluid-common(250, 395);
+
+    @include desktop {
+      align-self: center;
+      bottom: 0;
+    }
+  }
+
+  &__banner-button {
+    align-self: flex-start;
+  }
+}
