@@ -16,7 +16,7 @@
   &__body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: fluid-common(30, 60);
+    column-gap: fluid-common(25, 30);
 
     padding: fluid-common(25, 60);
     min-height: 310px;
@@ -44,6 +44,10 @@
   }
 
   &__title {
+    @include mobile-above {
+      font-size: fluid-common(20, 30);
+    }
+
     @include mobile-s {
       grid-column: span 2;
     }
@@ -69,8 +73,8 @@
     justify-self: center;
 
     @include tablet {
-      max-width: 120px;
-      max-height: 90px;
+      max-width: 130px;
+      max-height: 100px;
     }
 
     @include mobile {

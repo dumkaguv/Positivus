@@ -33,6 +33,8 @@
   }
 
   &__banner-button {
+    max-width: fluid-common(250, 290, 450);
+    width: 100%;
     align-self: flex-start;
   }
 }

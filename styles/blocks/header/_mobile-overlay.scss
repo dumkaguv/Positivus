@@ -20,7 +20,14 @@
 
     flex-direction: column;
     row-gap: 30px;
-    padding-top: 23%;
+
+    @include mobile {
+      padding-top: clamp(22vw, 45%, 25vw);
+    }
+
+    @include mobile-s {
+      padding-top: 35vw;
+    }  
   }
 
   &__link {

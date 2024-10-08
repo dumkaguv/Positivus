@@ -652,7 +652,16 @@ svg * {
   align-items: center;
   flex-direction: column;
   row-gap: 30px;
-  padding-top: 23%;
+}
+@media (max-width: 767px) {
+  .mobile-overlay__list {
+    padding-top: clamp(22vw, 45%, 25vw);
+  }
+}
+@media (max-width: 480px) {
+  .mobile-overlay__list {
+    padding-top: 35vw;
+  }
 }
 .mobile-overlay__link {
   position: relative;
@@ -814,8 +823,8 @@ svg * {
 .service-card__body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  -moz-column-gap: clamp(30px, 60 / 1440 * 100vw, 60px);
-       column-gap: clamp(30px, 60 / 1440 * 100vw, 60px);
+  -moz-column-gap: clamp(25px, 30 / 1440 * 100vw, 30px);
+       column-gap: clamp(25px, 30 / 1440 * 100vw, 30px);
   padding: clamp(25px, 60 / 1440 * 100vw, 60px);
   min-height: 310px;
   border-radius: var(--border-radius-large);
@@ -842,6 +851,11 @@ svg * {
 @media (max-width: 399px) {
   .service-card__body {
     padding: 35px;
+  }
+}
+@media (min-width: 768px) {
+  .service-card__title {
+    font-size: clamp(20px, 30 / 1440 * 100vw, 30px);
   }
 }
 @media (max-width: 480px) {
@@ -876,8 +890,8 @@ svg * {
 }
 @media (max-width: 1023px) {
   .service-card__image {
-    max-width: 120px;
-    max-height: 90px;
+    max-width: 130px;
+    max-height: 100px;
   }
 }
 @media (max-width: 767px) {
@@ -941,6 +955,8 @@ svg * {
   }
 }
 .services__banner-button {
+  max-width: clamp(250px, 290 / 450 * 100vw, 290px);
+  width: 100%;
   align-self: flex-start;
 }
 
