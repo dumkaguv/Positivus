@@ -83,7 +83,7 @@
     }
 
     @include mobile-s {
-      max-width: fluid-common(130, 155, 420);
+      max-width: fluid-common(135, 155, 460);
       grid-row: span 1;
       order: 2;
     }
