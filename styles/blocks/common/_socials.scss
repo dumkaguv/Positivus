@@ -1,0 +1,14 @@
+.soc1als {
+    &__list {
+        display: flex;
+        column-gap: 20px;
+    }
+
+    &__link {
+        @include flex-center(true);
+        @include square(30px);
+        @include hover {
+            color: var(--color-accent);
+        }
+    }
+}
